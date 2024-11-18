@@ -13,7 +13,7 @@
         },
         "DomainName": {
             "Type": "String",
-            "Domain": "api.cuffney.com",
+            "Default": "api.cuffney.com",
             "Description": "The custom domain name for the API"
         },
         "HostedZoneId": {

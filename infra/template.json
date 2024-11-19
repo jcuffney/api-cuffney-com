@@ -20,6 +20,11 @@
             "Type": "AWS::SSM::Parameter::Value<String>",
             "Default": "/cuffney/main/hosted-zone/id",
             "Description": "The ID of the Route 53 hosted zone"
+        },
+        "SSMNamespace": {
+            "Type": "String",
+            "Default": "/cuffney/main",
+            "Description": "The namespace for the SSM parameters"
         }
     },
     "Resources": {

@@ -12,8 +12,8 @@
             "Description": "The name of the stage"
         },
         "DomainName": {
-            "Type": "String",
-            "Default": "api.cuffney.com",
+            "Type": "AWS::SSM::Parameter::Value<String>",
+            "Default": "/cuffney/main/domain",
             "Description": "The custom domain name for the API"
         },
         "HostedZoneId": {
@@ -48,13 +48,13 @@
             "Type": "AWS::CertificateManager::Certificate",
             "Properties": {
                 "DomainName": {
-                    "Ref": "DomainName"
+                    "Fn::Sub": "api.${DomainName}"
                 },
                 "ValidationMethod": "DNS",
                 "DomainValidationOptions": [
                     {
                         "DomainName": {
-                            "Ref": "DomainName"
+                            "Fn::Sub": "api.${DomainName}"
                         },
                         "HostedZoneId": {
                             "Ref": "HostedZoneId"
@@ -67,7 +67,7 @@
             "Type": "AWS::ApiGatewayV2::DomainName",
             "Properties": {
                 "DomainName": {
-                    "Ref": "DomainName"
+                    "Fn::Sub": "api.${DomainName}"
                 },
                 "DomainNameConfigurations": [
                     {
@@ -100,7 +100,7 @@
                     "Ref": "HostedZoneId"
                 },
                 "Name": {
-                    "Ref": "DomainName"
+                    "Fn::Sub": "api.${DomainName}"
                 },
                 "Type": "A",
                 "AliasTarget": {

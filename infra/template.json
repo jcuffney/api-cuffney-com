@@ -118,6 +118,26 @@
                     }
                 }
             }
+        },
+        "ApiGatewayIdParameter": {
+            "Type": "AWS::SSM::Parameter",
+            "Properties": {
+                "Name": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "SSMNamespace"
+                            },
+                            "/api-gateway/id"
+                        ]
+                    ]
+                },
+                "Type": "String",
+                "Value": {
+                    "Ref": "HttpApi"
+                }
+            }
         }
     }
 }

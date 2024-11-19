@@ -18,7 +18,7 @@
         },
         "HostedZoneId": {
             "Type": "AWS::SSM::Parameter::Value<String>",
-            "Default": "/cuffney/main/hosted-zone/hosted-zone-id",
+            "Default": "/cuffney/main/hosted-zone/id",
             "Description": "The ID of the Route 53 hosted zone"
         }
     },

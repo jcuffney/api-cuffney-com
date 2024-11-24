@@ -1,4 +1,4 @@
-# Http Api Gateway
+# api.cuffney.com
 
 > Creates a api gateway at `api.cuffney.com`
 
